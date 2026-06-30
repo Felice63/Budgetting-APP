@@ -1,0 +1,1 @@
+Review the files in the `Budget-Calendar-App` directory against our `.github/copilot-instructions.md`. Check for leaky global styles, unhandled IndexedDB promises, or non-semantic HTML inputs.

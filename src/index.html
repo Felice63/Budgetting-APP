@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeting App</title>
+    <link rel="icon" type="image/svg+xml" href="./icons/icon-192.svg">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        @page {
+            size: 11in 8.5in landscape;
+            margin: 0.35in;
+        }
+
+        @media print {
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+        }
+    </style>
+    <script src="components/budget-app.js" type="module"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <budget-app></budget-app>
+</body>
+</html>

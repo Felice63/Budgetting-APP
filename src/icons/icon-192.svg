@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title desc">
+  <title id="title">Budgeting App Icon</title>
+  <desc id="desc">A clean wallet and calendar mark for the Budgeting App.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="40" fill="url(#bg)"/>
+  <rect x="42" y="52" width="108" height="80" rx="18" fill="#f8fafc" opacity="0.98"/>
+  <rect x="54" y="66" width="84" height="16" rx="8" fill="#0f766e" opacity="0.9"/>
+  <circle cx="62" cy="102" r="10" fill="#10b981"/>
+  <circle cx="88" cy="102" r="10" fill="#38bdf8"/>
+  <circle cx="114" cy="102" r="10" fill="#f59e0b"/>
+  <rect x="54" y="146" width="84" height="10" rx="5" fill="#e2e8f0"/>
+</svg>
