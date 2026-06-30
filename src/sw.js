@@ -1,10 +1,12 @@
 const CACHE_NAME = 'budget-app-cache-v2';
 const urlsToCache = [
-  '/src/index.html',
-  '/src/manifest.json',
-  '/src/components/budget-app.js',
-  '/src/components/budget-calendar/budget-calendar.js',
-  '/src/storage/db.js'
+  '/',
+  '/manifest.json',
+  '/icons/icon-192.svg',
+  '/icons/icon-512.svg',
+  '/components/budget-app.js',
+  '/components/budget-calendar/budget-calendar.js',
+  '/storage/db.js'
 ];
 
 self.addEventListener('install', event => {
