@@ -25,10 +25,6 @@ class BudgetApp extends HTMLElement {
         await this.loadSelectedDate();
         await this.refreshCalendarTransactions();
         this.loadTransactions();
-        if (!isPersisted) {
-            const warning = this.shadowRoot.getElementById('persist-warning');
-            if (warning) warning.hidden = false;
-        }
     }
 
     render() {
@@ -301,38 +297,6 @@ class BudgetApp extends HTMLElement {
                         grid-template-columns: 1fr;
                     }
                 }
-                .persist-warning {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 12px;
-                    padding: 12px 18px;
-                    margin-bottom: 16px;
-                    background: rgba(180, 90, 0, 0.08);
-                    border: 1px solid rgba(180, 90, 0, 0.22);
-                    border-radius: 14px;
-                    font-size: 0.88rem;
-                    color: #92400e;
-                    line-height: 1.4;
-                }
-                .persist-warning strong {
-                    font-weight: 700;
-                }
-                .persist-dismiss {
-                    background: none;
-                    border: none;
-                    cursor: pointer;
-                    font-size: 1rem;
-                    color: #92400e;
-                    padding: 2px 6px;
-                    border-radius: 6px;
-                    line-height: 1;
-                    flex-shrink: 0;
-                    font-family: inherit;
-                }
-                .persist-dismiss:hover {
-                    background: rgba(180, 90, 0, 0.12);
-                }
                 @media print {
                     :host {
                         min-height: auto;
@@ -361,10 +325,6 @@ class BudgetApp extends HTMLElement {
                     }
                 }
             </style>
-            <div id="persist-warning" class="persist-warning" hidden>
-                <span>Your data may not be saved permanently on this browser. On <strong>Mac, use Safari</strong> and install via <em>File → Add to Dock…</em> for isolated, persistent storage. On Chrome, clearing browser data may erase app data.</span>
-                <button class="persist-dismiss" id="persist-dismiss" type="button" aria-label="Dismiss">&#x2715;</button>
-            </div>
             <div class="container">
                 <aside class="sidebar">
                     <div>
@@ -422,14 +382,6 @@ class BudgetApp extends HTMLElement {
     }
 
     addEventListeners() {
-        const persistDismiss = this.shadowRoot.getElementById('persist-dismiss');
-        if (persistDismiss) {
-            persistDismiss.addEventListener('click', () => {
-                const warning = this.shadowRoot.getElementById('persist-warning');
-                if (warning) warning.hidden = true;
-            });
-        }
-
         const calendar = this.shadowRoot.querySelector('budget-calendar');
         const selectedDateEl = this.shadowRoot.querySelector('#selected-date');
         const transactionForm = this.shadowRoot.querySelector('#transaction-form');
