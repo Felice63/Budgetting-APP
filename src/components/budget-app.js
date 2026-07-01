@@ -362,7 +362,7 @@ class BudgetApp extends HTMLElement {
                 }
             </style>
             <div id="persist-warning" class="persist-warning" hidden>
-                <span>Your data may not be saved permanently on this browser. To ensure your data is never lost, <strong>install this app</strong> using the browser's install or "Add to Home Screen" option.</span>
+                <span>Your data may not be saved permanently on this browser. On <strong>Mac, use Safari</strong> and install via <em>File → Add to Dock…</em> for isolated, persistent storage. On Chrome, clearing browser data may erase app data.</span>
                 <button class="persist-dismiss" id="persist-dismiss" type="button" aria-label="Dismiss">&#x2715;</button>
             </div>
             <div class="container">
