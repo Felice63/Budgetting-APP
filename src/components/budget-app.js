@@ -12,6 +12,9 @@ class BudgetApp extends HTMLElement {
     }
 
     async connectedCallback() {
+        if (navigator.storage && navigator.storage.persist) {
+            await navigator.storage.persist();
+        }
         await openDB();
         this.render();
         this.addEventListeners();
